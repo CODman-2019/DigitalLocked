@@ -12,11 +12,12 @@ public class CameraChange : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameObject temp = Original;
+
             Debug.Log("CameraSwap complete");
             Original.SetActive(false);
             Newcam.SetActive(true);
 
-            GameObject temp = Original;
             Original = Newcam;
             Newcam = temp;
         }
