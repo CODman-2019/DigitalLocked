@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour
 
     float speed;
 
+    public GameObject lights;
+    public GameObject alterLights;
+
+
 
     // Update is called once per frame
     void Update()
@@ -33,6 +37,18 @@ public class PlayerController : MonoBehaviour
         {
             transform.Rotate(new Vector3(0.0f, turn, 0.0f));
         }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            lights.SetActive(false);
+            alterLights.SetActive(true);
+
+            GameObject temp = lights;
+            lights = alterLights;
+            alterLights = temp;
+
+        }
+
     }
 
     void IsRunning()
@@ -42,4 +58,8 @@ public class PlayerController : MonoBehaviour
             speed = run;
         }
     }
+}
+
+internal class gameObject
+{
 }
