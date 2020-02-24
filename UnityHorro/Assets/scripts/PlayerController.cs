@@ -10,8 +10,7 @@ public class PlayerController : MonoBehaviour
 
     float speed;
 
-    public GameObject lights;
-    public GameObject alterLights;
+    public GameObject flashLight; private bool flashSwitch = false;
 
 
 
@@ -38,22 +37,25 @@ public class PlayerController : MonoBehaviour
             transform.Rotate(new Vector3(0.0f, turn, 0.0f));
         }
 
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            lights.SetActive(false);
-            alterLights.SetActive(true);
-
-            GameObject temp = lights;
-            lights = alterLights;
-            alterLights = temp;
-
+            if (flashSwitch == true)
+            {
+                flashLight.SetActive(false);
+                flashSwitch = false;
+            }
+            else if(flashSwitch == false)
+            {
+                flashLight.SetActive(true);
+                flashSwitch = true;
+            }
         }
 
     }
 
     void IsRunning()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.RightShift))
         {
             speed = run;
         }
