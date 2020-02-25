@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Escape
   - Pickup
+  - item
+  - Escape1 key
   layers:
   - Default
   - TransparentFX

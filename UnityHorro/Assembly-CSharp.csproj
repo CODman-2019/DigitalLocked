@@ -68,6 +68,7 @@
     <Compile Include="Assets\scripts\DebugMENU.cs" />
     <Compile Include="Assets\scripts\PlayerController.cs" />
     <Compile Include="Assets\scripts\TimelinePlayer.cs" />
+    <None Include="Assets\Blood decal pack\readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/W0437472/Documents/GitHub/DigitalLocked/UnityHorro/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

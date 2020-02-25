@@ -1,18 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     public float walk;
     public float run;
     public float turn;
-
     float speed;
 
-    public GameObject flashLight; private bool flashSwitch = false;
+    public GameObject flashLight;
+    private bool flashSwitch = false;
 
+    GameObject[] inventory = new GameObject[6];
+    private GameObject item;
 
+    public Text pickUpPrompt;
 
     // Update is called once per frame
     void Update()
@@ -60,8 +64,26 @@ public class PlayerController : MonoBehaviour
             speed = run;
         }
     }
-}
 
-internal class gameObject
-{
+
+    private void OnTriggerEnter(Collider other)
+    {
+            item = other.gameObject;
+
+        if (other.CompareTag("Escape1 key"))
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                for(int i = 0; i< inventory.Length;i++)
+                {
+                    if(inventory[i] != null)
+                    {
+                        inventory[i] = item;
+                        item.SetActive(false);
+                        pickUpPrompt.text = "you picked up " + item; 
+                    }
+                }
+            }
+        }
+    }
 }
