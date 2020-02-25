@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     float speed;
 
     public GameObject flashLight;
-    private bool flashSwitch = false;
+    private bool flashSwitch = true;
 
     GameObject[] inventory = new GameObject[6];
     private GameObject item;
@@ -21,6 +21,14 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKey(KeyCode.H))
+        {
+        //    transform.Rotate.x = 0.0f;
+            transform.Rotate(new Vector3 (0.0f, 0.0f, 0.0f));
+            Debug.Log("object recalibrated");
+        }
+
         speed = walk;
 
         if (Input.GetKey(KeyCode.W))
