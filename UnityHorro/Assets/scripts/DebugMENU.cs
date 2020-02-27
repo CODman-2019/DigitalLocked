@@ -1,30 +1,36 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DebugMENU : MonoBehaviour
 {
-    private bool debugAccess;
+    bool textAccess;
+    public GameObject ControlsLayout;
     public GameObject lights;
     public GameObject alterLights;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        debugAccess = false;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tilde))
+        
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            debugAccess = true;
+            Debug.Log("Control text access");
+            if (textAccess)
+            {
+                ControlsLayout.SetActive(true);
+                textAccess = false;
+            }
+            else if (!textAccess)
+            {
+                ControlsLayout.SetActive(false);
+                textAccess = true;
+            }
         }
+       
 
-        if (debugAccess)
-        {
-            if (Input.GetKey(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 lights.SetActive(false);
                 alterLights.SetActive(true);
@@ -34,6 +40,24 @@ public class DebugMENU : MonoBehaviour
                 alterLights = temp;
 
             }
-        }
+
     }
+
+    //public void DebugOpen()
+    //{
+    //}
+
+    //public void DebugClose()
+    //{
+    //    if ((Input.GetKeyUp(KeyCode.Alpha2)) && (debugAccess))
+    //    {
+    //        debugAccess = false;
+    //    }
+    //}
+
+    //public void Reset()
+    //{
+    //    debugAccess = false;
+    //    ControlsLayout.SetActive(false);
+    //}
 }

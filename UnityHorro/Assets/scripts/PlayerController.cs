@@ -9,13 +9,11 @@ public class PlayerController : MonoBehaviour
     public float run;
     public float turn;
     float speed;
-
     public GameObject flashLight;
     private bool flashSwitch = true;
 
     GameObject[] inventory = new GameObject[6];
     private GameObject item;
-
     public Text pickUpPrompt;
 
     // Update is called once per frame
@@ -73,6 +71,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+ 
 
     private void OnTriggerEnter(Collider other)
     {
