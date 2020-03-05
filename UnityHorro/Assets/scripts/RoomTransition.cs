@@ -5,6 +5,8 @@ using UnityEngine;
 public class RoomTransition : MonoBehaviour
 {
     public GameObject newLocation;
+    public GameObject Original;
+    public GameObject Newcam;
 
     GameObject current;
 
@@ -16,9 +18,12 @@ public class RoomTransition : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Body"))
         {
             other.transform.position = current.transform.position;
+            Debug.Log("CameraSwap complete");
+            Original.SetActive(false);
+            Newcam.SetActive(true);
         }
     }
 }

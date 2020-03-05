@@ -8,6 +8,7 @@ TagManager:
   - Pickup
   - item
   - Escape1 key
+  - Body
   layers:
   - Default
   - TransparentFX
