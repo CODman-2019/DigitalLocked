@@ -19,7 +19,6 @@ ScriptsOnlyBuild:
     - UnityEngine.ProBuilder.ProBuilderMesh
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
@@ -866,4 +865,5 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/IntroLevel.unity
-  playerPath: C:/Users/W0437472/Documents/GitHub/DigitalLocked/UnityHorro/LevelIterations/UnityHorro.exe
+  playerPath: C:/Users/W0437472/Documents/GitHub/DigitalLocked/UnityHorro/LevelIterations/WhiteboxLevel3.0
+    - FINAL/UnityHorro.exe
