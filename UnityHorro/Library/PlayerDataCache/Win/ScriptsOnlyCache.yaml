@@ -866,4 +866,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/IntroLevel.unity
-  playerPath: C:/Users/W0437472/Documents/GitHub/DigitalLocked/UnityHorro/WhiteBoxLevel/UnityHorro.exe
+  playerPath: C:/Users/W0437472/Documents/GitHub/DigitalLocked/UnityHorro/LevelIterations/UnityHorro.exe
