@@ -9,25 +9,25 @@ public class PlayerController : MonoBehaviour
     public float run;
     public float turn;
     float speed;
+    
     public GameObject flashLight;
     private bool flashSwitch = true;
 
-    GameObject[] inventory = new GameObject[6];
-    private GameObject item;
-    public Text pickUpPrompt;
+
+
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (Input.GetKey(KeyCode.H))
         {
-        //    transform.Rotate.x = 0.0f;
             transform.Rotate(new Vector3 (0.0f, 0.0f, 0.0f));
             Debug.Log("object recalibrated");
         }
 
         speed = walk;
+
 
         if (Input.GetKey(KeyCode.W))
         {
@@ -65,32 +65,10 @@ public class PlayerController : MonoBehaviour
 
     void IsRunning()
     {
-        if (Input.GetKey(KeyCode.RightShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = run;
         }
     }
 
- 
-
-    private void OnTriggerEnter(Collider other)
-    {
-            item = other.gameObject;
-
-        if (other.CompareTag("Escape1 key"))
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                for(int i = 0; i< inventory.Length;i++)
-                {
-                    if(inventory[i] != null)
-                    {
-                        inventory[i] = item;
-                        item.SetActive(false);
-                        pickUpPrompt.text = "you picked up " + item; 
-                    }
-                }
-            }
-        }
-    }
 }
